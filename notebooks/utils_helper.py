@@ -418,3 +418,12 @@ all_annotated_citations_df = (full_combined_df[['title', 'source', 'citation_sum
  )
 
 
+# Narrative function of the first source in the story
+(
+    h.all_annotated_citations_df
+        .groupby(['source', 'article_title']).apply(lambda df: df.iloc[0]).reset_index(drop=True)
+        .explode('Narrative_Function')
+        .pipe(h.analyze_column, 'Narrative_Function')
+        .style.format(precision=3, na_rep='').background_gradient(cmap='Spectral', low=1, high=0, axis=None)
+ )
+
