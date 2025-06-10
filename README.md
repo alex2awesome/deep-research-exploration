@@ -23,8 +23,13 @@ The key files and directories for this project are organized as follows:
 
 The analysis has revealed several significant differences in writing style:
 
+![Source Authority](figures/centrality-heatmap-by-index.png)
+
 1.  **Sourcing Strategy**: News articles prioritize expert opinions and authoritative figures early in the text while Deep Research tends to rely more heavily on news and summarative articles.
 2.  **Narrative Structure**: Deep Research articles often focus more on the **implications** and **broader context** of an issue, while news articles tend to build their narratives around **counterpoints** and direct evidence.
+
+![Discourse Structure](figures/discourse_structure.png)
+
 3.  **Argument Construction**: A notable pattern is the "inverted authority pyramid" in news articles articles begin with a specific, high-authority sources while Deep Research relies on broader, contextual sources.
 
 For a detailed breakdown of the analytical categories and labels used, please refer to `notebooks/utils_helper.py` (for citation analysis) and `notebooks/utils_discourse.py` (for discourse analysis).
