@@ -404,6 +404,18 @@ all_annotated_citations_df = (full_combined_df[['title', 'source', 'citation_sum
 )
 
 
+# Save the styled DataFrame as an image
+import dataframe_image as dfi
+import asyncio
+from playwright.async_api import async_playwright
+# Assuming dataframe_image has a function that uses playwright internally
+
+async def generate_image_async(df, filename):
+  # If dataframe_image has an async function, use that. Otherwise, use to_thread
+  loop = asyncio.get_running_loop()
+  return await loop.run_in_executor(None, dfi.export, df, filename)
+
+
 
 
 
@@ -420,10 +432,10 @@ all_annotated_citations_df = (full_combined_df[['title', 'source', 'citation_sum
 
 # Narrative function of the first source in the story
 (
-    h.all_annotated_citations_df
+    all_annotated_citations_df
         .groupby(['source', 'article_title']).apply(lambda df: df.iloc[0]).reset_index(drop=True)
         .explode('Narrative_Function')
-        .pipe(h.analyze_column, 'Narrative_Function')
+        .pipe(analyze_column, 'Narrative_Function')
         .style.format(precision=3, na_rep='').background_gradient(cmap='Spectral', low=1, high=0, axis=None)
  )
 

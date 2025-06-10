@@ -23,10 +23,17 @@ The key files and directories for this project are organized as follows:
 
 The analysis has revealed several significant differences in writing style:
 
+#### Sourcing Strategy
+
 ![Source Authority](figures/centrality-heatmap-by-index.png)
 
 1.  **Sourcing Strategy**: News articles prioritize expert opinions and authoritative figures early in the text while Deep Research tends to rely more heavily on news and summarative articles.
+
+![Source Usage](figures/narrative_function_ratios.png)
+
 2.  **Narrative Structure**: Deep Research articles often focus more on the **implications** and **broader context** of an issue, while news articles tend to build their narratives around **counterpoints** and direct evidence.
+
+#### Discourse Structure
 
 ![Discourse Structure](figures/discourse_structure.png)
 
